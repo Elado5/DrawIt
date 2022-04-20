@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import './styles/App.css';
+import WelcomePage from './pages/WelcomePage';
+import WaitingPage from './pages/WaitingPage';
+import WordChoicePage from './pages/WordChoicePage';
+import DrawingPage from './pages/DrawingPage';
+import GuessingPage from './pages/GuessingPage';
 
-function App() {
+function App () {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={WelcomePage}></Route>
+        <Route path="/waiting" component={WaitingPage}></Route>
+        <Route path="/choice" component={WordChoicePage}></Route>
+        <Route path="/drawing" component={DrawingPage}></Route>
+        <Route path="/guessing" component={GuessingPage}></Route>
+      </Switch>
+    </BrowserRouter>
   );
 }
 
