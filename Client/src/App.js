@@ -26,15 +26,15 @@ function App () {
 
   return (
     <div className="app">
-    <Router forceRefresh={false}>
-      <Routes>
-      <Route path="/" element={<WelcomePage socket={socket} userName={userName} setUserName={setUserName} room={room} setRoom={setRoom} joinRoom={joinRoom} />} exact/>
-      <Route path="/waiting" element={<WaitingPage/>}/>
-      <Route path="/choice" element={<WordChoicePage/>}/>
-      <Route path="/drawing" element={<DrawingPage socket={socket} />}/>
-      <Route path="/guessing" element={<GuessingPage/>}></Route>
-      </Routes>
-    </Router>
+      <Router forceRefresh={false}>
+        <Routes>
+          <Route path="/" element={<WelcomePage socket={socket} userName={userName} setUserName={setUserName} room={room} setRoom={setRoom} joinRoom={joinRoom} />} exact />
+          <Route path="/waiting" element={<WaitingPage />} />
+          <Route path="/choice" element={<WordChoicePage />} />
+          <Route path="/drawing" element={<DrawingPage socket={socket} />} />
+          <Route path="/guessing" element={<GuessingPage />}></Route>
+        </Routes>
+      </Router>
     </div>
   );
 }

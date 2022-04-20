@@ -33,8 +33,12 @@ io.on("connection", (socket) => {
             socket.join(data);
             console.log(`User with ID: ${socket.id} joined room: ${data}`);
         }
-
+    },
+    
+    socket.on("send_drawing", (data) => {
+        socket.broadcast.emit("receive_drawing", data);
     })
+    )
 
     socket.on("disconnect", () => { console.log("user disconnected ", socket.id); });
 })
