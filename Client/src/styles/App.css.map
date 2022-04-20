@@ -1,9 +1,13 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "ACGA,AAAA,aAAa,CAAA;EACT,OAAO,EAAC,IAAI;EACZ,cAAc,EAAE,MAAM;EACtB,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM;EACnB,MAAM,EAAE,KAAK;EACb,KAAK,EAAE,IAAI;EACX,gBAAgB,EATN,OAAO;CAUpB;;ACXD,AAAA,aAAa,CAAC;EACb,OAAO,EAAE,CAAC;EACV,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACnB,eAAe,EAAE,MAAM;EAC1B,WAAW,EAAE,MAAM;EAChB,MAAM,EAAE,IAAI;EACf,KAAK,EAAE,IAAI;CAMX;;AAbD,AAQI,aARS,CAQT,OAAO,CAAA;EACH,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,MAAM;EACd,UAAU,EAAE,MAAM;CACrB;;ADTL,AAAA,aAAa,CAAA;EACT,OAAO,EAAC,IAAI;EACZ,cAAc,EAAE,MAAM;EACtB,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM;EACnB,MAAM,EAAE,KAAK;EACb,KAAK,EAAE,IAAI;EACX,gBAAgB,EATN,OAAO;CAUpB",
     "sources": [
         "App.scss",
-        "_WelcomePage.scss"
+        "_WelcomePage.scss",
+        "_DrawingPage.scss",
+        "_WaitingPage.scss",
+        "_WelcomePage.scss",
+        "_WordChoicePage.scss"
     ],
     "names": [],
     "file": "App.css"

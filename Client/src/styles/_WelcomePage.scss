@@ -1,0 +1,12 @@
+$MoveoColor1: #c55c57;
+$MoveoColor2: #525566;
+
+.welcome-page{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: $MoveoColor2;
+}

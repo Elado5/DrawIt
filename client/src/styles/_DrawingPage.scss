@@ -1,0 +1,14 @@
+.drawing-page {
+	z-index: 2;
+	display: flex;
+	flex-direction: column;
+    justify-content: center;
+	align-items: center;
+    height: 100%;
+	width: 100%;
+    .button{
+        width: 12rem;
+        height: 1.8rem;
+        margin-top: 0.5rem;
+    }
+}
