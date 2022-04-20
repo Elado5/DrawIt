@@ -18,7 +18,9 @@ function App () {
 
   const joinRoom = () => {
     if (userName !== "" && room !== "") {
-      socket.emit("join_room", room);
+      
+        socket.emit("join_room", room);
+      
     }
   };
 

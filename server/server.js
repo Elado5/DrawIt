@@ -16,11 +16,24 @@ const io = new Server(server, {
 })
 
 io.on("connection", (socket) => {
-    console.log("socket user id: ",socket.id); //each user that connect to the server gets an id
+    console.log("socket user id: ", socket.id); //each user that connect to the server gets an id
 
     socket.on("join_room", (data) => {
-        socket.join(data);
-        console.log(`User with ID: ${socket.id} joined room: ${data}`);
+        if (io.sockets.adapter.rooms.has(data)) {
+            if(io.sockets.adapter.rooms.get(data).size < 2) {
+                socket.join(data);
+                console.log(`User with ID: ${socket.id} joined room: ${data}`);
+                console.log('clients in room ', io.sockets.adapter.rooms.get(data).size)
+            }
+            else{
+                console.log('connection rejected - max 2 clients');
+            }
+        }
+        else{
+            socket.join(data);
+            console.log(`User with ID: ${socket.id} joined room: ${data}`);
+        }
+
     })
 
     socket.on("disconnect", () => { console.log("user disconnected ", socket.id); });
