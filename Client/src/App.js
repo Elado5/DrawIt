@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './styles/App.css';
 import WelcomePage from './pages/WelcomePage';
 import WaitingPage from './pages/WaitingPage';
@@ -18,22 +18,24 @@ function App () {
 
   const joinRoom = () => {
     if (userName !== "" && room !== "") {
-      
-        socket.emit("join_room", room);
-      
+
+      socket.emit("join_room", room);
+
     }
   };
 
   return (
-    <BrowserRouter forceRefresh={false}>
-      <Route exact path="/">
-        <WelcomePage socket={socket} userName={userName} setUserName={setUserName} room={room} setRoom={setRoom} joinRoom={joinRoom}/>
-      </Route>
-      <Route path="/waiting" component={WaitingPage}></Route>
-      <Route path="/choice" component={WordChoicePage}></Route>
-      <Route path="/drawing" component={DrawingPage}></Route>
-      <Route path="/guessing" component={GuessingPage}></Route>
-    </BrowserRouter>
+    <div className="app">
+    <Router forceRefresh={false}>
+      <Routes>
+      <Route path="/" element={<WelcomePage socket={socket} userName={userName} setUserName={setUserName} room={room} setRoom={setRoom} joinRoom={joinRoom} />} exact/>
+      <Route path="/waiting" element={<WaitingPage/>}/>
+      <Route path="/choice" element={<WordChoicePage/>}/>
+      <Route path="/drawing" element={<DrawingPage socket={socket} />}/>
+      <Route path="/guessing" element={<GuessingPage/>}></Route>
+      </Routes>
+    </Router>
+    </div>
   );
 }
 

@@ -8,7 +8,7 @@ const WelcomePage = ({socket, userName, setUserName, room, setRoom, joinRoom}) =
             <h2 className="title">DrawIt!</h2>
             <input type="text" placeholder="user name" className="username" onChange={(e) => setUserName(e.target.value)}></input>
             <input type="text" placeholder="room id" className="room-id" onChange={(e) => setRoom(e.target.value)}></input>
-            <Link to={`/drawing`}><button  className="play-button" onClick={joinRoom}>Play</button></Link>
+            <Link to={`/drawing`}><button className="play-button" onClick={joinRoom}>Play</button></Link>
         </div>
     )
 
