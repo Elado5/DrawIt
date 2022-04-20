@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import randomWords from 'random-words';
 
 const WordChoicePage = () => {
@@ -31,9 +32,15 @@ const WordChoicePage = () => {
 
     return (
         <div className="words-choice">
-            <div className="easy-word">{getWordViaMinMax(3, 4)}</div>
-            <div className="medium-word">{getWordViaLength(5)}</div>
-            <div className="easy-word">{getWordViaLength(6)}</div>
+            <Link to={{pathname:`/drawing`, state:{points: 1}}}>
+                <button className="easy-word">{getWordViaMinMax(3, 4)}</button>
+            </Link>
+            <Link to={{pathname:`/drawing`, state:{points: 3}}}>
+                <button className="medium-word">{getWordViaLength(5)}</button>
+            </Link>
+            <Link to={{pathname:`/drawing`, state:{points: 5}}}>
+                <button className="easy-word">{getWordViaLength(6)}</button>
+            </Link>
         </div>
     )
 }
