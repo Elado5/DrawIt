@@ -1,3 +1,7 @@
+* {
+  font-family: 'Dosis', 'sans-serif';
+}
+
 .welcome-page {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -15,6 +19,33 @@
   height: 100vh;
   width: 100%;
   background-color: #525566;
+}
+
+.welcome-page .title {
+  font-size: 5rem;
+  color: white;
+}
+
+.welcome-page input {
+  height: 2rem;
+  width: 10rem;
+}
+
+.welcome-page .play-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 1rem;
+}
+
+.welcome-page .play-button {
+  margin-top: 0.3rem;
+  height: 2rem;
+  width: 10rem;
 }
 
 .drawing-page {
@@ -34,6 +65,12 @@
           align-items: center;
   height: 100%;
   width: 100%;
+  background-color: #525566;
+}
+
+.drawing-page p {
+  font-size: 1rem;
+  margin: 0.3rem;
 }
 
 .drawing-page .button {
@@ -42,7 +79,26 @@
   margin-top: 0.5rem;
 }
 
-.welcome-page {
+.waiting-page {
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.words-choice {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -58,6 +114,54 @@
           align-items: center;
   height: 100vh;
   width: 100%;
+  background-color: lightgrey;
+}
+
+.words-choice .word-button {
+  cursor: pointer;
   background-color: #525566;
+  border: solid 4px #d8d8d8;
+  border-radius: 1rem;
+  font-size: 2.5rem;
+  padding: 0.5rem;
+  width: 100%;
+  color: #b7d0d2;
+}
+
+.words-choice .word-button:hover {
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  background-color: #c55c57;
+}
+
+.guessing-page {
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 98vh;
+  width: 100%;
+  background-color: #c55c57;
+}
+
+.guessing-page p {
+  font-size: 1rem;
+  margin: 0.3rem;
+}
+
+.guessing-page .button {
+  width: 12rem;
+  height: 1.8rem;
+  margin-top: 0.5rem;
 }
 /*# sourceMappingURL=App.css.map */

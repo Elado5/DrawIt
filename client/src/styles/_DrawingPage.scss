@@ -6,6 +6,11 @@
 	align-items: center;
     height: 100%;
 	width: 100%;
+    background-color: $MoveoColor2;
+    p{
+        font-size: 1rem;
+        margin: 0.3rem;
+    }
     .button{
         width: 12rem;
         height: 1.8rem;

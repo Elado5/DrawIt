@@ -1,0 +1,19 @@
+.guessing-page {
+	z-index: 2;
+	display: flex;
+	flex-direction: column;
+    justify-content: center;
+	align-items: center;
+    height: 98vh;
+	width: 100%;
+    background-color: $MoveoColor1;
+    p{
+        font-size: 1rem;
+        margin: 0.3rem;
+    }
+    .button{
+        width: 12rem;
+        height: 1.8rem;
+        margin-top: 0.5rem;
+    }
+}

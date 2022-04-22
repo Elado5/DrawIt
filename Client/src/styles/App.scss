@@ -6,7 +6,9 @@ $MoveoColor2-b: #52556675;
 
 
 
-
+*{
+    font-family: 'Dosis', 'sans-serif';
+}
 
 
 
@@ -14,5 +16,5 @@ $MoveoColor2-b: #52556675;
 @import "./WelcomePage";
 @import "./DrawingPage";
 @import "./WaitingPage";
-@import "./WelcomePage";
 @import "./WordChoicePage";
+@import "./GuessingPage";

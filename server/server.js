@@ -23,7 +23,7 @@ io.on("connection", (socket) => {
             if(io.sockets.adapter.rooms.get(data).size < 2) {
                 socket.join(data);
                 console.log(`User with ID: ${socket.id} joined room: ${data}`);
-                console.log('clients in room ', io.sockets.adapter.rooms.get(data).size)
+                console.log('clients in room ', io.sockets.adapter.rooms.get(data).size);
             }
             else{
                 console.log('connection rejected - max 2 clients');
@@ -32,13 +32,19 @@ io.on("connection", (socket) => {
         else{
             socket.join(data);
             console.log(`User with ID: ${socket.id} joined room: ${data}`);
+            console.log('clients in room ', io.sockets.adapter.rooms.get(data).size)
         }
-    },
+    }),
     
     socket.on("send_drawing", (data) => {
-        socket.broadcast.emit("receive_drawing", data);
+        //socket.broadcast.emit("receive_drawing", data);
+        console.log('data.room', data.room)
+        io.to(data.room).emit("receive_drawing", data);
     })
-    )
+    
+    // socket.on("request_player_number", (data) => {
+    //   io.to(data.room).emit("receive_player_number", io.sockets.adapter.rooms.get(data)?.size);
+    // })
 
     socket.on("disconnect", () => { console.log("user disconnected ", socket.id); });
 })
