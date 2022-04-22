@@ -63,20 +63,40 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100%;
+  height: 98vh;
   width: 100%;
+  border-radius: 2rem;
   background-color: #525566;
+}
+
+.drawing-page .canvas {
+  border-radius: inherit;
+  border: solid 4px #d8d8d8;
 }
 
 .drawing-page p {
   font-size: 1rem;
   margin: 0.3rem;
+  color: white;
+  text-shadow: 0 1px black;
 }
 
 .drawing-page .button {
-  width: 12rem;
-  height: 1.8rem;
-  margin-top: 0.5rem;
+  cursor: pointer;
+  width: 10rem;
+  margin: 0.25rem;
+  font-size: 1.2rem;
+  background-color: #c55c57;
+  border: solid 4px #d8d8d8;
+  border-radius: 1rem;
+  padding: 0.25rem;
+  color: #b7d0d2;
+}
+
+.drawing-page .button:hover {
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  background-color: #3d4db2;
 }
 
 .waiting-page {
@@ -151,17 +171,45 @@
           align-items: center;
   height: 98vh;
   width: 100%;
+  border-radius: 2rem;
   background-color: #c55c57;
+}
+
+.guessing-page .canvas {
+  border-radius: inherit;
+  border: solid 4px #d8d8d8;
+}
+
+.guessing-page input {
+  border-radius: inherit;
+  background-color: #525566;
+  border: solid 4px #d8d8d8;
+  padding: 0.25rem;
+  color: white;
 }
 
 .guessing-page p {
   font-size: 1rem;
   margin: 0.3rem;
+  text-shadow: 0 1px black;
+  color: white;
 }
 
 .guessing-page .button {
-  width: 12rem;
-  height: 1.8rem;
-  margin-top: 0.5rem;
+  cursor: pointer;
+  width: 10rem;
+  margin: 0.25rem;
+  font-size: 1.2rem;
+  background-color: #525566;
+  border: solid 4px #d8d8d8;
+  border-radius: 1rem;
+  padding: 0.25rem;
+  color: #b7d0d2;
+}
+
+.guessing-page .button:hover {
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  background-color: #3d4db2;
 }
 /*# sourceMappingURL=App.css.map */

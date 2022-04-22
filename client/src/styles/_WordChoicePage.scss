@@ -1,6 +1,3 @@
-$MoveoColor1: #c55c57;
-$MoveoColor2: #525566;
-
 .words-choice{
     display:flex;
     flex-direction: column;
@@ -13,7 +10,7 @@ $MoveoColor2: #525566;
     .word-button {
         cursor: pointer;
         background-color: $MoveoColor2;
-        border: solid 4px rgb(216, 216, 216);
+        border: solid 4px $greyish;
         border-radius: 1rem;
         font-size: 2.5rem;
         padding: 0.5rem;

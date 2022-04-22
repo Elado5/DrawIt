@@ -24,6 +24,7 @@ io.on("connection", (socket) => {
                 socket.join(data);
                 console.log(`User with ID: ${socket.id} joined room: ${data}`);
                 console.log('clients in room ', io.sockets.adapter.rooms.get(data).size);
+                io.to(data).emit("receive_number", io.sockets.adapter.rooms.get(data).size);
             }
             else{
                 console.log('connection rejected - max 2 clients');
@@ -33,6 +34,7 @@ io.on("connection", (socket) => {
             socket.join(data);
             console.log(`User with ID: ${socket.id} joined room: ${data}`);
             console.log('clients in room ', io.sockets.adapter.rooms.get(data).size)
+            io.to(data).emit("receive_number", io.sockets.adapter.rooms.get(data).size);
         }
     }),
     

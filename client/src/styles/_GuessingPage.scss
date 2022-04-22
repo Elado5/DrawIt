@@ -6,14 +6,39 @@
 	align-items: center;
     height: 98vh;
 	width: 100%;
+    border-radius: 2rem;
     background-color: $MoveoColor1;
-    p{
-        font-size: 1rem;
-        margin: 0.3rem;
+    .canvas {
+		border-radius: inherit;
+        border: solid 4px $greyish;
+	}
+    input{
+        border-radius: inherit;
+        background-color: $MoveoColor2;
+		border: solid 4px $greyish;
+        padding: 0.25rem;
+        color: white;
     }
-    .button{
-        width: 12rem;
-        height: 1.8rem;
-        margin-top: 0.5rem;
-    }
+	p {
+		font-size: 1rem;
+		margin: 0.3rem;
+        text-shadow: 0 1px black;
+        color: white;
+	}
+	.button {
+        cursor: pointer;
+		width: 10rem;
+		margin: 0.25rem;
+		font-size: 1.2rem;
+		background-color: $MoveoColor2;
+		border: solid 4px rgb(216, 216, 216);
+		border-radius: 1rem;
+		padding: 0.25rem;
+
+		color: #b7d0d2;
+		&:hover {
+			transition: 0.2s ease-in-out;
+			background-color: rgb(61, 77, 178);
+		}
+	}
 }

@@ -11,6 +11,8 @@ const WelcomePage = ({ socket, userName, setUserName, room, setRoom, joinRoom })
             <div className="play-buttons">
                 <Link to={`/choice`}><button className="play-button" onClick={joinRoom}>Play-Drawer</button></Link>
                 <Link to={`/guessing`}><button className="play-button" onClick={joinRoom}>Play-Guesser</button></Link>
+                <Link to={`/waiting`}><button className="play-button" onClick={joinRoom}>Play</button></Link>
+
             </div>
         </div>
     )
