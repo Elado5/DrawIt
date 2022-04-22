@@ -35,8 +35,12 @@ function App () {
   useEffect(() => {
     socket.on("receive_number", (data)=> {
       console.log('receive_number data => ', data);
+      if(playerNumber === 0){
       setPlayerNumber(data);
+      }
     })
+
+    return (console.log('released receive number'));
   }, [])
 
   return (

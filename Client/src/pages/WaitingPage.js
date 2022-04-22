@@ -1,7 +1,7 @@
-import React, {useEffect} from 'react';
-import {Navigate} from 'react-router-dom';
+import React, { useEffect } from 'react';
+import {Link, Navigate } from 'react-router-dom';
 
-const WaitingPage = ({ socket, playerNumber, setPlayerNumber,  room }) => {
+const WaitingPage = ({ socket, playerNumber, setPlayerNumber, room }) => {
 
     if (playerNumber === 1) {
 
@@ -19,8 +19,10 @@ const WaitingPage = ({ socket, playerNumber, setPlayerNumber,  room }) => {
 
     else {
         return (
-           // <Navigate replace to={`/`}></Navigate>
-           <p>Waiting...</p>
+            <div className="waiting-page">
+                <p>This room is full, try another one.</p>
+                <Link to={`/`}><button>Back</button></Link>
+            </div>
         )
     }
 }

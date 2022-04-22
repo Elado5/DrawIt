@@ -5,6 +5,16 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-height: 100%;
+height: 98vh;
 width: 100%;
+text-align: center;
+color: $MoveoColor2;
+p{
+    font-size: 6rem;
+}
+button{
+    font-size: 3rem;
+    color: $MoveoColor2;
+    border-radius: 1rem;
+}
 }

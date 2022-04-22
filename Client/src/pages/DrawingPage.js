@@ -38,7 +38,7 @@ const DrawingPage = ({ socket, room, userName, points, addPoints, playerNumber }
 
         socket.on("receive_guess_result", (data) => {
             console.log('data', data)
-            if (data.correct) {
+            if (data.correct && pointsForWord > 0) {
                 //TODO success screen and move
                 addPoints(pointsForWord);
                 console.log('moving to guessing');
@@ -48,12 +48,25 @@ const DrawingPage = ({ socket, room, userName, points, addPoints, playerNumber }
                 //TODO fail screen and move
                 alert("Failed");
             }
-        })
+        }, [socket])
 
         return () => {
+            socket.off("receive_guess_result");
             console.log("cleaned up Drawing useEffect");
         };
-    }, [socket])
+    },)
+
+    useEffect(() => {
+
+        if( localStorage.getItem('highestScore') && localStorage.getItem('highestScore') <points){
+        localStorage.setItem('highestScore', points);
+        }
+        else if( !localStorage.getItem('highestScore')){
+            localStorage.setItem('highestScore', points);
+        }
+        return () => {
+          };
+    }, [points])
 
     return (
         <div className="drawing-page">

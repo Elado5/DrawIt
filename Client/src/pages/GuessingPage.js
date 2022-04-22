@@ -27,8 +27,7 @@ const GuessingPage = ({ socket, room , userName, points, addPoints, playerNumber
             if (guess === word){
                 socket.emit("send_guess_result", {room: room, correct: true}); // send result and add points to other player
                 addPoints(pointsForWord); //add points locally
-                console.log('moving to choice');
-                navigate("../choice", {replace: false});
+                navigate("../choice", {replace: true});
             }
             else{
                 socket.emit("send_guess_result", {room: room, correct: false});
@@ -38,8 +37,19 @@ const GuessingPage = ({ socket, room , userName, points, addPoints, playerNumber
     
     useEffect(() => {
 
+        if( localStorage.getItem('highestScore') && localStorage.getItem('highestScore') <points){
+        localStorage.setItem('highestScore', points);
+        }
+        else if( !localStorage.getItem('highestScore')){
+            localStorage.setItem('highestScore', points);
+        }
+        return () => {
+          };
+    }, [points])
+
+    useEffect(() => {
+
         socket.on("receive_drawing", (data) => {
-            console.log('data from drawing received', data)
             sessionStorage.setItem('drawingSave', data.drawing); //get saved drawing data from playmate
             setWord(data.word); // get the word that needs to be guessed
             setPointsForWord(data.pointsForWord); // get how many points the word is worth
@@ -47,11 +57,9 @@ const GuessingPage = ({ socket, room , userName, points, addPoints, playerNumber
         })
 
         return () => {
-            console.log("cleaned up Guess useEffect");
+            socket.off('receive_drawing');
           };
     }, [socket])
-
-
     return (
         <div className="guessing-page">
             <CanvasDraw ref={canvasRef} className="canvas" canvasWidth={window.innerWidth * 0.75} canvasHeight={window.innerHeight * 0.75} disabled={true} hideInterface= {true}/>
