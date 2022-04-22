@@ -38,10 +38,13 @@ io.on("connection", (socket) => {
     
     socket.on("send_drawing", (data) => {
         //socket.broadcast.emit("receive_drawing", data);
-        console.log('data.room', data.room)
         io.to(data.room).emit("receive_drawing", data);
     })
     
+    socket.on("send_guess_result", (data) => {
+        io.to(data.room).emit("receive_guess_result", data);
+    })
+
     // socket.on("request_player_number", (data) => {
     //   io.to(data.room).emit("receive_player_number", io.sockets.adapter.rooms.get(data)?.size);
     // })

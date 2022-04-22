@@ -32,13 +32,13 @@ const WordChoicePage = () => {
 
     return (
         <div className="words-choice">
-            <Link to={`/drawing`} state={{points:1, word: getWordViaMinMax(3, 4)}}>
+            <Link to={`/drawing`} state={{pointsForWord:1, word: getWordViaMinMax(3, 4)}}>
                 <button className="word-button">Easy Word - 1 Point</button>
             </Link>
-            <Link to={`/drawing`} state={{points:3, word: getWordViaLength(5)}}>
+            <Link to={`/drawing`} state={{pointsForWord:3, word: getWordViaLength(5)}}>
                 <button className="word-button">Medium Word - 3 Points</button>
             </Link>
-            <Link to={`/drawing`} state={{points:5, word: getWordViaLength(6)}}>
+            <Link to={`/drawing`} state={{pointsForWord:5, word: getWordViaLength(6)}}>
                 <button className="word-button">Hard Word - 5 Points</button>
             </Link>
         </div>

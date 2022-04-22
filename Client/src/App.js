@@ -15,6 +15,7 @@ function App () {
 
   const [userName, setUserName] = useState("");
   const [room, setRoom] = useState("");
+  const [points, setPoints] = useState(0);
   const [playerNumber, setPlayerNumber] = useState(0); //? 0 = not playing, 1 = player1, 2 = player2
 
   const joinRoom = () => {
@@ -32,6 +33,11 @@ function App () {
     console.log('playerNumber', playerNumber)
   };
 
+  const addPoints = (amount) => {
+    setPoints(points + amount);
+    console.log('new score: ', points )
+  }
+
   return (
     <div className="app">
       <Router forceRefresh={false}>
@@ -39,8 +45,8 @@ function App () {
           <Route path="/" element={<WelcomePage socket={socket} userName={userName} setUserName={setUserName} room={room} setRoom={setRoom} joinRoom={joinRoom} />} exact />
           <Route path="/waiting" element={<WaitingPage socket={socket} playerNumber={playerNumber} />} />
           <Route path="/choice" element={<WordChoicePage socket={socket}/>} />
-          <Route path="/drawing" element={<DrawingPage socket={socket} room={room} userName={userName} />} />
-          <Route path="/guessing" element={<GuessingPage socket={socket} room={room} userName={userName}/>}></Route>
+          <Route path="/drawing" element={<DrawingPage socket={socket} room={room} userName={userName} points={points} addPoints={addPoints}/>} />
+          <Route path="/guessing" element={<GuessingPage socket={socket} room={room} userName={userName} points={points} addPoints={addPoints} />}></Route>
         </Routes>
       </Router>
     </div>
