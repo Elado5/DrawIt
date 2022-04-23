@@ -12,7 +12,7 @@ import io from 'socket.io-client';
 const port = process.env.PORT || 5000;
 
 
-const socket = io.connect(`http://localhost:${port}`);
+const socket = io.connect(`/`);
 
 function App () {
 
