@@ -4,16 +4,15 @@
 	flex-direction: column;
     justify-content: center;
 	align-items: center;
-    height: 98vh;
+    height: 100vh;
 	width: 100%;
-    border-radius: 2rem;
     background-color: $MoveoColor1;
     .canvas {
-		border-radius: inherit;
+		border-radius: 2rem;
         border: solid 4px $greyish;
 	}
     input{
-        border-radius: inherit;
+        border-radius: 2rem;
         background-color: $MoveoColor2;
 		border: solid 4px $greyish;
         padding: 0.25rem;

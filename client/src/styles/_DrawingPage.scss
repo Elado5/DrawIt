@@ -4,13 +4,57 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 98vh;
+	height: 100vh;
 	width: 100%;
-	border-radius: 2rem;
 	background-color: $MoveoColor2;
 	.canvas {
-		border-radius: inherit;
+		border-radius: 2rem;
         border: solid 4px $greyish;
+		position: relative;
+	}
+	.color-buttons{
+		z-index: 5;
+		position: absolute;
+		display: flex;
+		flex-direction: column;
+		border-radius: 1rem;
+		right: 2px;
+		.button1{
+			background-color: blue;
+			padding: 0.8rem;
+			border-radius: inherit;
+			border: solid 2px $greyish;
+		}
+		.button2{
+			background-color: red;
+			padding: 0.8rem;
+			border-radius: inherit;
+		}
+		.button3{
+			background-color: green;
+			padding: 0.8rem;
+			border-radius: inherit;
+		}
+		.button4{
+			background-color: purple;
+			padding: 0.8rem;
+			border-radius: inherit;
+		}
+		.button5{
+			background-color: yellow;
+			padding: 0.8rem;
+			border-radius: inherit;
+		}
+		.button6{
+			background-color: #444;
+			padding: 0.8rem;
+			border-radius: inherit;
+		}
+		.button7{
+			background-color: black;
+			padding: 0.8rem;
+			border-radius: inherit;
+		}
 	}
 	p {
 		font-size: 1rem;

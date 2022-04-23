@@ -24,6 +24,10 @@
 		animation: textclip 5s linear infinite;
 		display: inline-block;
 		font-size: 8rem;
+
+		@media screen and (max-width: 1000px) {
+			font-size: 5rem;
+		}
 	}
 	@keyframes textclip {
 		to {

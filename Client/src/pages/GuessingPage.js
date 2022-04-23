@@ -31,6 +31,8 @@ const GuessingPage = ({ socket, room , userName, points, addPoints, playerNumber
             }
             else{
                 socket.emit("send_guess_result", {room: room, correct: false});
+                alert("Incorrect, the word was " + word);
+                navigate("../choice", {replace: true});
             }
         }
     }

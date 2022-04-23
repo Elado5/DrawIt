@@ -4,6 +4,8 @@ import CanvasDraw from "react-canvas-draw";
 
 const DrawingPage = ({ socket, room, userName, points, addPoints, playerNumber }) => {
 
+    const [brushColor, setBrushColor] = useState("#444");
+
     const canvasRef = useRef(null);
     const location = useLocation();
     const navigate = useNavigate();
@@ -46,7 +48,7 @@ const DrawingPage = ({ socket, room, userName, points, addPoints, playerNumber }
             }
             else {
                 //TODO fail screen and move
-                alert("Failed");
+                navigate("../guessing", { replace: true });
             }
         }, [socket])
 
@@ -70,7 +72,17 @@ const DrawingPage = ({ socket, room, userName, points, addPoints, playerNumber }
 
     return (
         <div className="drawing-page">
-            <CanvasDraw ref={canvasRef} className="canvas" canvasWidth={window.innerWidth * 0.75} canvasHeight={window.innerHeight * 0.75} brushRadius={7} />
+            <div className="color-buttons">
+                <button className="button1" onClick={() => {setBrushColor("blue")}}></button>
+                <button className="button2" onClick={() => {setBrushColor("red")}}></button>
+                <button className="button3" onClick={() => {setBrushColor("green")}}></button>
+                <button className="button4" onClick={() => {setBrushColor("purple")}}></button>
+                <button className="button5" onClick={() => {setBrushColor("yellow")}}></button>
+                <button className="button6" onClick={() => {setBrushColor("#444")}}></button>
+                <button className="button7" onClick={() => {setBrushColor("black")}}></button>
+
+            </div>
+            <CanvasDraw ref={canvasRef} className="canvas" canvasWidth={window.innerWidth * 0.75} canvasHeight={window.innerHeight * 0.75} brushRadius={7} brushColor={brushColor} />
             <p>Word To Draw: {word} |  Current Points: {points}</p>
             <p>User: {userName} | Room: {room}</p>
             <div className="buttons">

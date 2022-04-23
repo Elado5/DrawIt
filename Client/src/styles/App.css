@@ -2,6 +2,10 @@
   font-family: 'Dosis', 'sans-serif';
 }
 
+* body {
+  margin: 0;
+}
+
 .welcome-page {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -37,6 +41,12 @@
           animation: textclip 5s linear infinite;
   display: inline-block;
   font-size: 8rem;
+}
+
+@media screen and (max-width: 1000px) {
+  .welcome-page .title {
+    font-size: 5rem;
+  }
 }
 
 @-webkit-keyframes textclip {
@@ -93,15 +103,72 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 98vh;
+  height: 100vh;
   width: 100%;
-  border-radius: 2rem;
   background-color: #525566;
 }
 
 .drawing-page .canvas {
-  border-radius: inherit;
+  border-radius: 2rem;
   border: solid 4px #d8d8d8;
+  position: relative;
+}
+
+.drawing-page .color-buttons {
+  z-index: 5;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 1rem;
+  right: 2px;
+}
+
+.drawing-page .color-buttons .button1 {
+  background-color: blue;
+  padding: 0.8rem;
+  border-radius: inherit;
+  border: solid 2px #d8d8d8;
+}
+
+.drawing-page .color-buttons .button2 {
+  background-color: red;
+  padding: 0.8rem;
+  border-radius: inherit;
+}
+
+.drawing-page .color-buttons .button3 {
+  background-color: green;
+  padding: 0.8rem;
+  border-radius: inherit;
+}
+
+.drawing-page .color-buttons .button4 {
+  background-color: purple;
+  padding: 0.8rem;
+  border-radius: inherit;
+}
+
+.drawing-page .color-buttons .button5 {
+  background-color: yellow;
+  padding: 0.8rem;
+  border-radius: inherit;
+}
+
+.drawing-page .color-buttons .button6 {
+  background-color: #444;
+  padding: 0.8rem;
+  border-radius: inherit;
+}
+
+.drawing-page .color-buttons .button7 {
+  background-color: black;
+  padding: 0.8rem;
+  border-radius: inherit;
 }
 
 .drawing-page p {
@@ -211,19 +278,18 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 98vh;
+  height: 100vh;
   width: 100%;
-  border-radius: 2rem;
   background-color: #c55c57;
 }
 
 .guessing-page .canvas {
-  border-radius: inherit;
+  border-radius: 2rem;
   border: solid 4px #d8d8d8;
 }
 
 .guessing-page input {
-  border-radius: inherit;
+  border-radius: 2rem;
   background-color: #525566;
   border: solid 4px #d8d8d8;
   padding: 0.25rem;
