@@ -11,7 +11,6 @@ const DrawingPage = ({ socket, room, userName, points, addPoints, playerNumber }
     const navigate = useNavigate();
     const pointsForWord = location.state?.pointsForWord;
     const word = location.state?.word;
-    console.log('location.state', location.state)
     if (playerNumber === 0) {
         document.location.href = '/';
     }
@@ -32,29 +31,23 @@ const DrawingPage = ({ socket, room, userName, points, addPoints, playerNumber }
     }
 
     const sendDrawing = () => {
-        //socket.emit("send_drawing", { drawing: "drawing" });
         socket.emit("send_drawing", { drawing: canvasRef.current.getSaveData(), room: room, word: word, pointsForWord: pointsForWord });
     }
 
     useEffect(() => {
 
         socket.on("receive_guess_result", (data) => {
-            console.log('data', data)
             if (data.correct && pointsForWord > 0) {
-                //TODO success screen and move
                 addPoints(pointsForWord);
-                console.log('moving to guessing');
                 navigate("../guessing", { replace: true });
             }
             else {
-                //TODO fail screen and move
                 navigate("../guessing", { replace: true });
             }
         }, [socket])
 
         return () => {
             socket.off("receive_guess_result");
-            console.log("cleaned up Drawing useEffect");
         };
     },)
 
