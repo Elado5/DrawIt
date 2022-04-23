@@ -9,7 +9,10 @@ import GuessingPage from './pages/GuessingPage';
 
 import io from 'socket.io-client';
 
-const socket = io.connect("http://localhost:3001");
+const port = process.env.PORT || 5000;
+
+
+const socket = io.connect(`http://localhost:${port}`);
 
 function App () {
 
@@ -23,8 +26,6 @@ function App () {
     if (userName !== "" && room !== "") {
       socket.emit("join_room", room);
     }
-    console.log('session storage Player Number: ', sessionStorage.getItem('playerNumber'))
-    console.log('playerNumber', playerNumber)
   };
 
   const addPoints = (amount) => {
@@ -34,7 +35,6 @@ function App () {
 
   useEffect(() => {
     socket.on("receive_number", (data)=> {
-      console.log('receive_number data => ', data);
       if(playerNumber === 0){
       setPlayerNumber(data);
       }

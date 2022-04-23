@@ -64,7 +64,8 @@ const GuessingPage = ({ socket, room , userName, points, addPoints, playerNumber
         <div className="guessing-page">
             <CanvasDraw ref={canvasRef} className="canvas" canvasWidth={window.innerWidth * 0.75} canvasHeight={window.innerHeight * 0.75} disabled={true} hideInterface= {true}/>
             <p>User: {userName} | Room: {room}</p>
-            <p>Points For Word: {pointsForWord} | Current Points: {points}</p>
+            {pointsForWord === 0 && <p>Waiting for other player... | Current Points: {points}</p>}
+            {pointsForWord > 0 && <p>Points For Word: {pointsForWord} | Current Points: {points}</p>}
             <input type="text" placeholder="Your Guess" className="guess-input" onChange={(e) => setGuess(e.target.value)}/>
             <button className="button" onClick={sendGuessResult}>Send Guess</button>
             <button className="button" onClick={loadDrawingReplay}>Replay Animation</button>

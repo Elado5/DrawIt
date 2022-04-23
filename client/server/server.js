@@ -1,18 +1,24 @@
-const PORT = 3001;
 const express = require('express');
-const app = express();
 const http = require('http');
 const cors = require('cors');
+const path = require('path');
 const { Server } = require('socket.io');
 
+const PORT =  process.env.PORT || 5000;
+
+const app = express();
 app.use(cors());
+app.use(express.static(path.join(__dirname, "..", "build/")));
+
+//serve the react components
+app.get('/*',(req,res) => {
+	console.log(`+9999`, path.join(__dirname, "..", "build", "index.html"))
+	res.sendFile(path.join(__dirname, "..", "build", "index.html"));
+  })
 
 const server = http.createServer(app);
 
 const io = new Server(server, {
-    cors: {
-        origin: "http://localhost:3000"
-    }
 })
 
 io.on("connection", (socket) => {
@@ -36,11 +42,11 @@ io.on("connection", (socket) => {
             console.log('clients in room ', io.sockets.adapter.rooms.get(data).size)
             io.to(data).emit("receive_number", io.sockets.adapter.rooms.get(data).size);
         }
-    }),
+    })
     
     socket.on("send_drawing", (data) => {
-        //socket.broadcast.emit("receive_drawing", data);
         io.to(data.room).emit("receive_drawing", data);
+        
     })
     
     socket.on("send_guess_result", (data) => {
