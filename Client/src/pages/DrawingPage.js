@@ -11,6 +11,9 @@ const DrawingPage = ({ socket, room, userName, points, addPoints, playerNumber }
     const navigate = useNavigate();
     const pointsForWord = location.state?.pointsForWord;
     const word = location.state?.word;
+
+    const buttonColors = ["blue", "red", "green", "purple", "yellow", "#444", "black"];
+
     if (playerNumber === 0) {
         document.location.href = '/';
     }
@@ -66,14 +69,9 @@ const DrawingPage = ({ socket, room, userName, points, addPoints, playerNumber }
     return (
         <div className="drawing-page">
             <div className="color-buttons">
-                <button className="button1" onClick={() => {setBrushColor("blue")}}></button>
-                <button className="button2" onClick={() => {setBrushColor("red")}}></button>
-                <button className="button3" onClick={() => {setBrushColor("green")}}></button>
-                <button className="button4" onClick={() => {setBrushColor("purple")}}></button>
-                <button className="button5" onClick={() => {setBrushColor("yellow")}}></button>
-                <button className="button6" onClick={() => {setBrushColor("#444")}}></button>
-                <button className="button7" onClick={() => {setBrushColor("black")}}></button>
-
+                {buttonColors.map((element,key) => {
+                    return (<button className={`button${(key+1)}`} onClick={() => {setBrushColor(element)}}/>)
+                })}
             </div>
             <CanvasDraw ref={canvasRef} className="canvas" canvasWidth={window.innerWidth * 0.75} canvasHeight={window.innerHeight * 0.75} brushRadius={7} brushColor={brushColor} />
             <p>Word To Draw: {word} |  Current Points: {points}</p>
