@@ -1,70 +1,50 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# DrawIt!
 
-## Available Scripts
+A fullstack Draw&Guess game project.
 
-In the project directory, you can run:
+I created the game with:
+- NodeJS
+- Express
+- Socket.IO
+- React
+- SCSS
 
-### `npm start`
+**DrawIt! is fully responsive across all platforms! :)**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# How to play
+To begin a game, simply enter a user name & room name and click the “play” button.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Due to the rules of the game, each room is accessible to a maximum of two people at a time.
 
-### `npm test`
+The first player to enter the room will choose a word to draw and then draw it, while the second player to enter will receive the drawing and guess what was painted.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Upon guessing – the roles will be reversed and points will be added to the game session, when both players refresh/close the tab, the room will reset.
 
-### `npm run build`
+The player’s highest game score will be saved locally and presented on the main screen.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Extra features
+- Live online play session using socket.io
+- The drawing will be sent along with the **video** of how the other player drew it, and it can be replayed.
+- You can change colors while painting.
+- Drawings can be saved in local storage and reloaded later.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Deployed on:
+**http://elad.shenkar-tech.co.il/**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Screenshots
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## **Home Page**
+![App Screenshot](https://i.ibb.co/8YwZjBr/dw2.jpg)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## **Word Choice Page**
+![App Screenshot](https://i.ibb.co/LYh97sB/dw3.jpg)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## **Drawing Page**
+![App Screenshot](https://i.ibb.co/BKkLTpg/dw1.jpg)
 
-## Learn More
+## **Guessing Page**
+![App Screenshot](https://i.ibb.co/RYX6T3h/dw4.jpg)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
